@@ -1,0 +1,13 @@
+name: lint
+
+on: push
+
+jobs:
+ linter:
+  runs-on: ubuntu-latest
+  steps:
+   - uses: actions/checkout@v3
+   - name: install lint
+     run: npm install --save-dev eslint
+   - name: run lint
+     run: npx eslint *.js
